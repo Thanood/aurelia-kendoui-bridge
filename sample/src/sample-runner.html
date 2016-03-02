@@ -7,9 +7,7 @@
             <button k-button click.delegate="api.show()">API</button>
           </div>
           <div id="exampleWrap">
-            <div id="${sample.control}-${sample.sample}">
-              <compose view-model.bind="sample.path"></compose>
-            </div>
+            <iframe ref="iframe" scrolling="yes" frameborder="0"></iframe>
           </div>
         </collapse-panel>
         <collapse-panel title="Code Preview">

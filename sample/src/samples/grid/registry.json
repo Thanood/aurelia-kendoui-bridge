@@ -2,24 +2,7 @@
   "title": "Grid",
   "namespace": "kendo.ui.Grid",
   "samples": {
-    "basic-use": {
-      "default": true,
-      "files": ["html", "js", "css"]
-    },
-    "batch-editing": {},
-    "binding-to-local-data": {
-      "files": ["html", "js", "json"]
-    },
-    "binding-to-remote-data": {},
-    "binding-to-signalr": {},
-    "editing-custom-editor": {
-      "files": ["html", "js", "json"]
-    },
-    "frozen-columns": {},
-    "initialization-from-table": {},
-    "inline-editing": {},
-    "popup-editing": {},
-    "working-offline": {},
-    "advanced": {}
+    "basic-use": "00369a67e187a09f0d38",
+    "test": "6b228c94b7bbb1a6784d"
   }
 }

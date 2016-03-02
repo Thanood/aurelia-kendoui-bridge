@@ -18,19 +18,26 @@ export class SampleRunner {
 
     this.sample = sample;
 
-    this.unsubscribe = this.ea.subscribe('kendo:skinChange', () => this.restart());
+
+
+    // this.unsubscribe = this.ea.subscribe('kendo:skinChange', () => this.restart());
+  }
+
+  attached() {
+    this.iframe.src = 'https://gist.run/embed.html?id=' + this.sample.gistId;
   }
 
   restart() {
-    let old = this.sample;
-    this.sample = undefined;
-    this.taskQueue.queueTask(() => {
-      this.sample = old;
-    });
+    this.iframe.src = 'https://gist.run/embed.html?id=' + this.sample.gistId;
+    // let old = this.sample;
+    // this.sample = undefined;
+    // this.taskQueue.queueTask(() => {
+    //   this.sample = old;
+    // });
   }
 
   detached() {
-    this.unsubscribe.dispose();
+    // this.unsubscribe.dispose();
   }
 
   determineActivationStrategy() {

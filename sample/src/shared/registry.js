@@ -5,9 +5,16 @@ export class Registry {
       config.title = registry.title;
 
       let map = [];
+      let first = true;
 
       for (let _sample of Object.keys(registry.samples)) {
         let sample = registry.samples[_sample];
+
+        if (typeof sample === 'string') {
+          sample = {
+            gistId: sample
+          };
+        }
 
         sample.path = `samples/${control}/${_sample}`;
         sample.route = sample.route || _sample;
@@ -15,29 +22,23 @@ export class Registry {
         sample.control = control;
         sample.sample = _sample;
         sample.title = sample.title || this.getTitleFromRoute(_sample);
-        sample.moduleId = sample.moduleId || 'sample-runner';
-        sample.nav = sample.nav || true;
-        sample.files = sample.files || ['html', 'js'];
-        sample.files.forEach(extension => {
-          sample[extension] = `${sample.path}.${extension}`;
-        });
+        sample.moduleId = 'sample-runner';
 
-        if (sample.default === true) {
-          map.push({
-            title: sample.title,
-            redirect: sample.route,
-            route: '',
-            sample: sample
-          });
-        }
+        // sample.nav = sample.nav || true;
+        // sample.files = sample.files || ['html', 'js'];
+        // sample.files.forEach(extension => {
+        //   sample[extension] = `${sample.path}.${extension}`;
+        // });
 
         map.push({
           title: sample.title,
-          nav: sample.nav,
           moduleId: sample.moduleId,
-          route: sample.route,
+          route: first ? sample.route : [sample.route, ''],
+          nav: true,
           sample: sample
         });
+
+        first = false;
       }
 
       config.map(map);

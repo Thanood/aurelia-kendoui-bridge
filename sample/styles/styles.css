@@ -263,3 +263,8 @@ collapse-panel .panel-heading {
 collapse-panel .panel-heading strong {
   line-height: 26px;
 }
+
+#exampleWrap > iframe {
+  width: 100%;
+  height: 300px;
+}

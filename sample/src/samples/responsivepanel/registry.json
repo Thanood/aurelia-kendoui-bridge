@@ -1,8 +1,0 @@
-{
-  "title": "ResponsivePanel",
-  "samples": {
-    "basic-use": {
-      "route": ["", "basic-use"]
-    }
-  }
-}

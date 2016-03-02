@@ -1,9 +1,0 @@
-{
-  "title": "Scrollview",
-  "samples": {
-    "basic-use": {
-      "route": ["", "basic-use"],
-      "files": ["html", "js", "css"]
-    }
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "title": "Treemap",
-  "samples": {
-    "basic-use": {
-      "route": ["", "basic-use"]
-    },
-    "events": {}
-  }
-}
