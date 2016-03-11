@@ -5,9 +5,17 @@
              k-sortable.bind="true"
              k-pageable.bind="true">
       <ak-grid-toolbar>
-       <ak-template>
-         <button click.delegate="test()">test</button>
-       </ak-template>
+        <ak-template>
+          <label class="category-label" for="category">Show products by category:</label>
+          <ak-drop-down-list k-data-text-field="CategoryName"
+                             k-data-value-field="CategoryID"
+                             k-option-label="All"
+                             k-auto-bind.bind="false"
+                             k-data-source.bind="categoryDataSource"
+                             k-on-change.delegate="categoryChanged($event.detail)"
+                             style="width: 150px;">
+          </ak-drop-down-list>
+        </ak-template>
       </ak-grid-toolbar>
 
       <ak-col k-title="Product ID" k-field="ProductID"></ak-col>

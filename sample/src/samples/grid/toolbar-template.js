@@ -1,5 +1,5 @@
 export class ToolbarTemplate {
-  dataSource = {
+  dataSource = new kendo.data.DataSource({
     type: 'odata',
     transport: {
       read: '//demos.telerik.com/kendo-ui/service/Northwind.svc/Products'
@@ -8,9 +8,23 @@ export class ToolbarTemplate {
     serverPaging: true,
     serverSorting: true,
     serverFiltering: true
+  });
+
+  categoryDataSource = {
+    type: 'odata',
+    severFiltering: true,
+    transport: {
+      read: '//demos.telerik.com/kendo-ui/service/Northwind.svc/Categories'
+    }
   };
 
-  test() {
-    alert('test');
+  categoryChanged(e) {
+    let dropdownlist = e.sender;
+    let value = dropdownlist.value();
+    if (value) {
+      this.dataSource.filter({ field: 'CategoryID', operator: 'eq', value: parseInt(value, 0) });
+    } else {
+      this.dataSource.filter({});
+    }
   }
 }
