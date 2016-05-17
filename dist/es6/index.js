@@ -22,3 +22,7 @@ export function configure(aurelia, configCallback) {
     repeatStrategyLocator.addStrategy(items => items instanceof kendo.data.ObservableArray, new ArrayRepeatStrategy());
   }
 }
+
+// build-index-remove start
+export * from './common/decorators';
+// build-index-remove end
